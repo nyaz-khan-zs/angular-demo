@@ -1,0 +1,53 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+body {
+  padding: 0;
+  margin: 0;
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f8f9fa; /* Optional: background color */
+  .text-center {
+    text-align: center;
+  }
+}
+
+.custom-card {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+  @extend .custom-card;
+}
+.main-container {
+  @extend .form-wrapper;
+  max-width: 90%;
+  margin: auto;
+}
+
+.card-side-heading {
+  text-align: right;
+  span {
+    font-size: 12px;
+    color: rgb(101, 101, 118);
+  }
+}
+.custom-logo {
+  border-radius: 30%;
+  width: 42px;
+  height: 42px;
+  margin-right: 10px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 32px;
+  color: #fff;
+}

@@ -1,0 +1,103 @@
+<form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="jobRole">Role :</label>
+    <input
+      type="text"
+      id="jobRole"
+      formControlName="jobRole"
+      class="form-control my-2"
+    />
+    <div *ngIf="getError('jobRole', 'required')" class="text-danger">
+      Role type is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="requirements">Job Requirements:</label>
+    <textarea
+      id="requirements"
+      formControlName="requirements"
+      class="form-control my-2"
+    ></textarea>
+    <div *ngIf="getError('requirements', 'required')" class="text-danger">
+      Job requirements are required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="skills">Skills / Tags:</label>
+    <ng-select
+      id="skills"
+      [items]="skills"
+      bindLabel="name"
+      [multiple]="true"
+      placeholder="Select skills"
+      [searchable]="true"
+      [clearable]="true"
+      [addTag]="true"
+      (add)="addSkill($event)"
+      formControlName="skills"
+    >
+    </ng-select>
+    <div *ngIf="getError('skills', 'required')" class="text-danger">
+      Skills are required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="salary">Salary per Hour :</label>
+    <input
+      type="number"
+      id="salary"
+      formControlName="salary"
+      class="form-control my-2"
+    />
+    <div *ngIf="getError('salary', 'required')" class="text-danger">
+      salary is required.
+    </div>
+    <div *ngIf="getError('salary', 'pattern')" class="text-danger">
+      Enter a valid positive number.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Job Description Document:</label>
+    <input
+      type="file"
+      id="description"
+      (change)="onFileChange($event)"
+      accept=".txt"
+      class="form-control my-2"
+    />
+    <div *ngIf="getError('description', 'maxSize')" class="text-danger">
+      The file size should not exceed {{ FILE_MAX_SIZE / 1024 }}KB. Current
+      size:
+      {{ getControl('description')?.errors?.['maxSize'].actualSize / 1024 | number:'1.0-0'
+
+
+
+
+
+
+
+
+
+
+
+
+      }}KB.
+    </div>
+  </div>
+  <div *ngIf="fileContent" class="preview">
+    <h3>File Preview:</h3>
+    <pre>{{ fileContent }}</pre>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary mt-2"
+    [disabled]="jobForm.invalid || isLoading"
+  >
+    {{ isLoading ? "Submiting ..." : "Submit" }}
+  </button>
+</form>

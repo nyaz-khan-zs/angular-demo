@@ -1,0 +1,58 @@
+<div class="custom-card">
+  <div class="d-flex justify-content-between">
+    <div
+      class="custom-logo"
+      [style.background-color]="getFirstLetterColor(job.companyName)"
+      style=""
+    >
+      {{ job.companyName.charAt(0) }}
+    </div>
+
+    <div class="card-side-heading">
+      <b> {{ job.jobRole }} </b>
+      <br />
+      <span> at {{ job.companyName }} </span>
+    </div>
+  </div>
+  <hr />
+  <div class="job-details">
+    <p class="card-text"><b>Requirements:</b> {{ job.requirements }}</p>
+    <p class="card-text"><b>Skills:</b> {{ job.skills.join(", ") }}</p>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center mt-4">
+    <div class="card-text">
+      <b>Salary: </b> <span class="fs-4 text-primary">{{ job.salary }} </span> /
+      Hr
+    </div>
+    <div class="card-text">
+      <b>Applied By:</b> {{ job.applicantDetails.length }} candidates
+    </div>
+  </div>
+  <hr />
+
+  <div class="d-flex justify-content-between">
+    <button
+      *ngIf="!isEmployer; else applyBtn"
+      [disabled]="isAlreadyApplied"
+      (click)="applyJob()"
+      [ngClass]="
+        isAlreadyApplied ? 'btn btn-primary' : 'btn btn-outline-primary'
+      "
+    >
+      {{ isAlreadyApplied ? "Applied" : isAplying ? "Applying ..." : "Apply" }}
+    </button>
+    <ng-template #applyBtn>
+      <button
+        class="btn btn-outline-primary"
+        [routerLink]="['/jobs', 'edit', job.id]"
+      >
+        Edit
+      </button>
+    </ng-template>
+
+    <button class="btn btn-outline-primary" [routerLink]="['/jobs', job.id]">
+      View Details
+    </button>
+  </div>
+</div>

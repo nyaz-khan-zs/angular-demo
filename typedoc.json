@@ -1,0 +1,7 @@
+// {
+//   "out": "docs",
+//   // "mode": "modules",
+//   // "exclude": "**/*+(index|.spec|.mock|.test).ts",
+//   "entryPointStrategy": "resolve",
+//   "includeVersion": true
+// }

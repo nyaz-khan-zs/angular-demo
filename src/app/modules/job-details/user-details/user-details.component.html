@@ -1,0 +1,49 @@
+<div [routerLink]="['/jobs', jobId]">Back</div>
+
+<div class="custom-card">
+  <ng-container *ngIf="!isUserLoading; else loader">
+    <div class="d-flex justify-content-between">
+      <div
+        class="custom-logo"
+        [style.background-color]="getFirstLetterColor(userDetails.name)"
+        style=""
+      >
+        {{ userDetails.name.charAt(0) }}
+      </div>
+      <div class="card-side-heading">
+        <b> {{ userDetails.name }} </b>
+        <br />
+        <span> {{ userDetails.email }} </span>
+      </div>
+    </div>
+    <hr />
+    <div class="job-details">
+      <p class="card-text">
+        <b>Skills:</b> {{ userDetails.skills.join(", ") }}
+      </p>
+    </div>
+
+    <div
+      class="job-list row"
+      *ngIf="githubRepoList; else githubRepoListLoading"
+    >
+      <div class="col-md-12" *ngFor="let repo of githubRepoList">
+        <div class="custom-card d-flex justify-content-start">
+          <div>
+            <b> Title: </b> <span>{{ repo.name }}</span>
+            <br />
+            <span> <b> Description: </b> {{ repo.description }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+  </ng-container>
+  <ng-template #loader>
+    <h1>loading...</h1>
+  </ng-template>
+  <ng-template #githubRepoListLoading>
+    <h1>Loading ...</h1>
+  </ng-template>
+</div>

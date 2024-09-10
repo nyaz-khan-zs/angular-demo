@@ -1,0 +1,70 @@
+<div [routerLink]="['/jobs']">Back</div>
+<div class="custom-card" *ngIf="jobDetails; else loadingscreen">
+  <div class="d-flex justify-content-between">
+    <div
+      class="custom-logo"
+      [style.background-color]="getFirstLetterColor(jobDetails.companyName)"
+      style=""
+    >
+      {{ jobDetails.companyName.charAt(0) }}
+    </div>
+
+    <div class="card-side-heading">
+      <b> {{ jobDetails.jobRole }} </b>
+      <br />
+      <span> at {{ jobDetails.companyName }} </span>
+    </div>
+  </div>
+  <hr />
+  <div class="job-details">
+    <p class="card-text"><b>Requirements:</b> {{ jobDetails.requirements }}</p>
+    <p class="card-text"><b>Skills:</b> {{ jobDetails.skills.join(", ") }}</p>
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <div class="card-text">
+        <b>Salary: </b>
+        <span class="fs-4 text-primary">{{ jobDetails.salary }} </span> / Hr
+      </div>
+    </div>
+    <div *ngIf="fileContent">
+      <p class="card-text"><b>Job Description:</b></p>
+
+      <div class="preview">
+        <pre>{{ fileContent }}</pre>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div *ngIf="!isEmployer" class="d-flex justify-content-center">
+    <button
+      [disabled]="isAlreadyApplied"
+      (click)="applyJob()"
+      [ngClass]="
+        isAlreadyApplied ? 'btn btn-primary' : 'btn btn-outline-primary'
+      "
+    >
+      {{ isAlreadyApplied ? "Applied" : "Apply" }}
+    </button>
+  </div>
+
+  <div *ngIf="isEmployer">
+    <div class="card-text">
+      <b>Applied By:</b> {{ jobDetails.applicantDetails.length }} candidates
+    </div>
+    <div class="job-list row" *ngIf="candidateList; else loadingCondidateList">
+      <app-user-card
+        class="col-md-4"
+        *ngFor="let user of candidateList"
+        [user]="user"
+        [jobId]="jobId"
+      ></app-user-card>
+    </div>
+    <ng-template #loadingCondidateList>
+      <h1>loading ....</h1>
+    </ng-template>
+  </div>
+</div>
+<ng-template #loadingscreen>
+  <h1>loading.....</h1>
+</ng-template>

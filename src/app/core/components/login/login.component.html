@@ -1,0 +1,79 @@
+<div class="center-container">
+  <div class="form-wrapper">
+    <h2 class="text-center">Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="userType">User Type:</label>
+        <select
+          id="userType"
+          formControlName="userType"
+          class="form-control my-2"
+        >
+          <option value="" disabled>User Type</option>
+          <option *ngFor="let type of userTypes" [value]="type">
+            {{ type }}
+          </option>
+        </select>
+        <div
+          *ngIf="
+            getControl('userType')?.invalid && getControl('userType')?.touched
+          "
+          class="text-danger"
+        >
+          <div *ngIf="getError('userType', 'required')">
+            User Type is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="form-control my-2"
+        />
+        <div
+          *ngIf="getControl('email')?.invalid && getControl('email')?.touched"
+          class="text-danger"
+        >
+          <div *ngIf="getError('email', 'required')">Email is required.</div>
+          <div *ngIf="getError('email', 'email')">Enter a valid email.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="form-control my-2"
+        />
+        <div
+          *ngIf="
+            getControl('password')?.invalid && getControl('password')?.touched
+          "
+          class="text-danger"
+        >
+          <div *ngIf="getError('password', 'required')">
+            Password is required.
+          </div>
+          <div *ngIf="getError('password', 'minlength')">
+            Password must be at least 6 characters long.
+          </div>
+        </div>
+      </div>
+      <div class="mt-2 d-flex justify-content-between">
+        <a href="/sign-up" class="link-primary"> sign up </a>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="loginForm.invalid || isLoading"
+        >
+          {{ isLoading ? "Submiting ..." : "Submit" }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

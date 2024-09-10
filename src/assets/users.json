@@ -1,0 +1,202 @@
+[
+  {
+    "userType": "employer",
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "johndoe@123",
+    "skills": [],
+    "githubUsername": null,
+    "companyName": "Browsetype",
+    "id": 1,
+    "confirmPassword": "johndoe@123"
+  },
+  {
+    "userType": "employer",
+    "name": "Jane Smith",
+    "email": "janesmith@example.com",
+    "password": "janesmith@123",
+    "skills": [],
+    "githubUsername": null,
+    "companyName": "Blogtags",
+    "id": 2,
+    "confirmPassword": "janesmith@123"
+  },
+  {
+    "userType": "employer",
+    "name": "Alice Johnson",
+    "email": "alicejohnson@example.com",
+    "password": "alicejohnson@123",
+    "skills": [],
+    "githubUsername": null,
+    "companyName": "Twitternation",
+    "id": 3,
+    "confirmPassword": "alicejohnson@123"
+  },
+  {
+    "userType": "employer",
+    "name": "Bob Williams",
+    "email": "bobwilliams@example.com",
+    "password": "bobwilliams@123",
+    "skills": [],
+    "githubUsername": null,
+    "companyName": "Jaloo",
+    "id": 4,
+    "confirmPassword": "bobwilliams@123"
+  },
+  {
+    "userType": "employer",
+    "name": "Charlie Brown",
+    "email": "charliebrown@example.com",
+    "password": "charliebrown@123",
+    "skills": [],
+    "githubUsername": null,
+    "companyName": "Fliptune",
+    "id": 5,
+    "confirmPassword": "charliebrown@123"
+  },
+  {
+    "userType": "employer",
+    "name": "David Lee",
+    "email": "davidlee@example.com",
+    "password": "davidlee@123",
+    "skills": [],
+    "githubUsername": null,
+    "companyName": "Mybuzz",
+    "id": 6,
+    "confirmPassword": "davidlee@123"
+  },
+  {
+    "userType": "employer",
+    "name": "Emily Taylor",
+    "email": "emilytaylor@example.com",
+    "password": "emilytaylor@123",
+    "skills": [],
+    "githubUsername": null,
+    "companyName": "Brightbean",
+    "id": 7,
+    "confirmPassword": "emilytaylor@123"
+  },
+  {
+    "userType": "employer",
+    "name": "Frank Miller",
+    "email": "frankmiller@example.com",
+    "password": "frankmiller@123",
+    "skills": [],
+    "githubUsername": null,
+    "companyName": "Edgetag",
+    "id": 8,
+    "confirmPassword": "frankmiller@123"
+  },
+  {
+    "userType": "employer",
+    "name": "Grace Jones",
+    "email": "nyazkhan@gmail.com",
+    "password": "nyazkhan@123",
+    "skills": [],
+    "githubUsername": null,
+    "companyName": "Camido",
+    "id": 9,
+    "confirmPassword": "nyazkhan@123"
+  },
+  {
+    "userType": "employer",
+    "name": "Harry Potter",
+    "email": "harrypotter@example.com",
+    "password": "harrypotter@123",
+    "skills": [],
+    "githubUsername": null,
+    "companyName": "Youspan",
+    "id": 10,
+    "confirmPassword": "harrypotter@123"
+  },
+  {
+    "userType": "freelancer",
+    "name": "Ivy Green",
+    "email": "ivygreen@example.com",
+    "password": "ivygreen@123",
+    "confirmPassword": "ivygreen@123",
+    "skills": ["java", "react", "html"],
+    "githubUsername": "rahulcode751",
+    "id": 11
+  },
+  {
+    "userType": "freelancer",
+    "name": "Jack Black",
+    "email": "jackblack@example.com",
+    "password": "jackblack@123",
+    "confirmPassword": "jackblack@123",
+    "skills": ["angular", "javascript", "git"],
+    "githubUsername": "Shivansh-Thakur",
+    "id": 12
+  },
+  {
+    "userType": "freelancer",
+    "name": "Kate Middleton",
+    "email": "kate middleton@example.com",
+    "password": "kate middleton@123",
+    "confirmPassword": "kate middleton@123",
+    "skills": ["python", "css", "json"],
+    "githubUsername": "JayGoyal96",
+    "id": 13
+  },
+  {
+    "userType": "freelancer",
+    "name": "Leo DiCaprio",
+    "email": "leodicaprio@example.com",
+    "password": "leodicaprio@123",
+    "confirmPassword": "leodicaprio@123",
+    "skills": ["go", "next.js", "vue.js"],
+    "githubUsername": "prashant695",
+    "id": 14
+  },
+  {
+    "userType": "freelancer",
+    "name": "Mia Wallace",
+    "email": "miawallace@example.com",
+    "password": "miawallace@123",
+    "confirmPassword": "miawallace@123",
+    "skills": ["C++", ".NET", "c#"],
+    "githubUsername": "atulrana007",
+    "id": 15
+  },
+  {
+    "userType": "freelancer",
+    "name": "Noah Centineo",
+    "email": "noahcentineo@example.com",
+    "password": "noahcentineo@123",
+    "confirmPassword": "noahcentineo@123",
+    "skills": ["kotlin", "react.js", "git"],
+    "githubUsername": "aksharanigam1112",
+    "id": 16
+  },
+  {
+    "userType": "freelancer",
+    "name": "Olivia Wilde",
+    "email": "oliviawilde@example.com",
+    "password": "oliviawilde@123",
+    "confirmPassword": "oliviawilde@123",
+    "skills": ["java", "angular", "html"],
+    "githubUsername": "saima-s",
+    "id": 17
+  },
+  {
+    "userType": "freelancer",
+    "name": "Peter Parker",
+    "email": "peterparker@example.com",
+    "password": "peterparker@123",
+    "confirmPassword": "peterparker@123",
+    "skills": ["javascript", "react", "css"],
+    "githubUsername": "Mouzzamsddq",
+    "id": 18
+  },
+  {
+    "userType": "freelancer",
+    "name": "Queen Elizabeth",
+    "email": "nyazkhan@gmail.com",
+    "password": "nyazkhan@123",
+    "confirmPassword": "nyazkhan@123",
+    "skills": ["python", "next.js", "vue.js"],
+    "githubUsername": "nyazkhan",
+    "id": 19
+  }
+]

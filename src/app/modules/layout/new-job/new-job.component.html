@@ -1,0 +1,11 @@
+<div [routerLink]="['/jobs']">Back</div>
+
+<h2 class="text-center">{{ jobId ? "Edit" : "New" }} Job details</h2>
+<app-job-form
+  *ngIf="!jobId || (jobId && jobDetails); else loading"
+  [jobDetails]="jobDetails"
+  [userDetails]="logedInUser"
+></app-job-form>
+<ng-template #loading>
+  <h1>loading ....</h1>
+</ng-template>
